@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+
+}
+.menuContainer {
+  display: flex;
+  justify-content: start;
+  width: 42%;
+ }
+.menu {
+  display: flex;
+  gap:10px;
+  justify-content: center;
+  color: #391113;
+  font-weight: 400;
+  font-size: 18px;
+  font-family: 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: none;
+
+  & a:hover {
+    color: #a77e99;
+
+  }
+
+}
+.burgerBtn {
+  display: none;
+  background: none;
+}
+.menuItem {
+  align-self: center;
+  }
+
+
+@media(max-width: 991px){
+  .burgerBtn {
+    display: block;
+  }
+  .menu {
+    display: none;
+  }
+
+}
+

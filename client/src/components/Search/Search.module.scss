@@ -1,0 +1,40 @@
+.searchForm {
+  display: flex;
+  align-items: flex-start;
+  border: 2px solid #d8cbc0;
+}
+.searchInput {
+  padding-left: 6px;
+  color:#391113;
+  font-family: futura-book,Helvetica,sans-serif;
+  background: none;
+}
+.searchInput::placeholder{
+  padding-bottom: 3px;
+  color:#d8cbc0;
+  font-family: futura-book,Helvetica,sans-serif;
+}
+
+.btnSearch {
+  background: white;
+}
+.searchForm {
+  display: flex;
+  align-items: flex-start;
+  border: 2px solid #d8cbc0;
+}
+.searchInput {
+  padding-left: 6px;
+  color:#391113;
+  font-family: futura-book,Helvetica,sans-serif;
+  background: white;
+}
+.searchInput::placeholder{
+  padding-bottom: 3px;
+  color:#d8cbc0;
+  font-family: futura-book,Helvetica,sans-serif;
+}
+
+.btnSearch {
+  background: none;
+}

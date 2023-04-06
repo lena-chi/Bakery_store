@@ -1,0 +1,195 @@
+.filterContainer {
+  width: 200px;
+  text-align: left;
+}
+.form {
+  width: 100%;
+  margin-top: 5px;
+ }
+.btnFilter {
+  display: none;
+}
+img {
+  width: 100%;
+}
+.title {
+  color: #391113;
+  font-size: 20px;
+  font-family: futura-medium,Helvetica,sans-serif;
+}
+.filterBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.line {
+  width: 82%;
+  height: 1px;
+  background-color: white;
+  margin-block: 1px;
+}
+
+.lineWhite {
+  width: 82%;
+  height: 2px;
+  margin-top: 6px;
+}
+.filterItem {
+  position: relative;
+  margin-block: 5px;
+  margin-left: 15px;
+  color: #391113;
+  font-size: 18px;
+  font-family: futura-medium,Helvetica,sans-serif;
+  text-transform: none;
+}
+
+.checkboxCake:checked + .checkCake,
+.checkboxCheese:checked + .checkCheese,
+.checkboxTarts:checked + .checkTarts,
+.checkboxPastries:checked + .checkPastries,
+.checkboxWithChoco:checked + .checkWithChoco,
+.checkboxNoChoco:checked + .checkNoChoco,
+.checkboxWithSugar:checked + .checkWithSugar,
+.checkboxNoSugar:checked + .checkNoSugar,
+.checkboxWithNuts:checked + .checkWithNuts,
+.checkboxNoNuts:checked + .checkNoNuts,
+.checkboxS:checked + .checkS,
+.checkboxM:checked + .checkM,
+.checkboxL:checked + .checkL {
+  background: #391113;
+}
+input{
+  margin-right: 14px;
+}
+section {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  background: white;
+  border: 1px solid #391113;
+  border-radius: 3px;
+
+}
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 5px;
+  background-color: #fce5f2;
+  cursor: auto;
+}
+.btnSubmit {
+  width: 100%;
+  height: 40px;
+  color: #f09ec4;
+  font-weight: 200;
+  font-size: 23px;
+  font-family: Barlow Condensed, sans-serif;
+  background-color: #391113;
+  border-radius: 0;
+
+}
+.btnSubmit:hover {
+  opacity: 0.7;
+}
+
+.text {
+  display: inline-block;
+  margin-top: 3px;
+  color: #391113;
+  font-size: 18px;
+  font-family: futura-medium,Helvetica,sans-serif;
+}
+.divBtn {
+  width: 25px;
+  margin-left: 15px;
+  color: #391113;
+  font-size: 20px;
+  font-family: futura-medium,Helvetica,sans-serif;
+  text-align: center;
+}
+@media (max-width: 1399px) and (min-width: 992px){
+  .filterContainer{
+  }
+  .btnFilter {
+    display: none;
+  }
+
+}
+@media (max-width: 991px ) and (min-width: 768px) {
+  .filterContainer {
+  }
+  .btnFilter {
+    display: none;
+  }
+
+
+}
+
+@media (max-width: 767px) {
+  .filterContainer {
+    width: 100%;
+    padding-left: 0;
+    text-align: center;
+  }
+  .btnFilter {
+    display: block;
+    background: none;
+  }
+
+  .form {
+    width: 500px;
+    text-align: center;
+  }
+  .title {
+    display: none;
+  }
+  .form {
+    display: none;
+  }
+  .formActive {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+  }
+  .filterBlock {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  .filterItem {
+    display: flex;
+    justify-content: start;
+    width: 35%;
+  }
+  .filterMob {
+    width: 30%;
+
+  }
+  section {
+    top:3px;
+    left: 2px;
+  }
+}
+@media (max-width: 543px){
+  .formActive {
+    width: 250px;
+    text-align: center;
+  }
+  section {
+    top:3px;
+    left: 0;
+  }
+  .filterItem {
+    width: 50%;
+    margin-left: 0;
+    }
+  .filterMob {
+    width: auto;
+  }
+}

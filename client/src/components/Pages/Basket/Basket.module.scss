@@ -1,0 +1,44 @@
+.basket {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  margin: auto;
+  padding-bottom: 20px;
+  color: #494949;
+  font-family: 'Barlow Condensed', sans-serif;
+  background-color: #fff;
+ }
+
+.title {
+  padding-top: 55px;
+  padding-bottom: 55px;
+  color: #391113;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 1.2;
+  letter-spacing: 0;
+
+}
+.subContainer {
+  display: flex;
+  width: 100%;
+}
+.subText {
+  margin-block: 10px;
+  width: 60%;
+  padding-left: 10px;
+  color: #391113;
+  font-size: 36px;
+}
+.btnOrder {
+  width: 100%;
+  height: 40px;
+  color: #f09ec4;
+  font-weight: 200;
+  font-size: 23px;
+  font-family: Barlow Condensed, sans-serif;
+  background-color: #391113;
+  border-radius: 0;
+}
+

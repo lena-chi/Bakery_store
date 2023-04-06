@@ -1,0 +1,64 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-inline: auto;
+  justify-content: space-between;
+  margin: 5px;
+
+}
+.cardLinkBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.cardImage {
+  justify-items: end;
+ width: 230px;
+  height: 250px;
+ overflow: hidden;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.cardImageItem {
+  width: 100%;
+  height: auto;
+}
+.cardName {
+
+}
+.cardNameText {
+  color: #391113;
+  font-weight: 300;
+  font-size: 20px;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+.cardPrice {
+  margin-bottom: 10px;
+}
+.cardPriceText {
+  color: #909090;
+  font-size: 16px;
+  font-family: 'Asap', sans-serif;
+}
+.button_link{
+  width: 100%;
+}
+.btn {
+  width: 90%;
+  height: 40px;
+  margin: 0 auto;
+  color: #f09ec4;
+  font-weight: 200;
+  font-size: 23px;
+  font-family: Barlow Condensed, sans-serif;
+  background-color: #391113;
+  border-radius: 0;
+  margin-block: 10px;
+}
+.btn:hover {
+  opacity: 0.7;
+}

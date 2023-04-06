@@ -1,0 +1,124 @@
+.form {
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  input{
+    margin-right: 0;
+  }
+}
+.field {
+  padding: 5px;
+  font-weight: 100;
+  font-size: 25px;
+  font-family: Barlow Condensed, sans-serif;
+  border: 3px solid #d8cbc0;
+  opacity: 1;
+}
+.blockFieldTitle {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.fieldTitle {
+  margin: 0 auto;
+  color: #391113;
+  font-weight: 300;
+  font-size: 25px;
+  font-family: Barlow Condensed, sans-serif;
+  text-align: center;
+}
+.radioText{
+  color: #391113;
+  font-size: 18px;
+  font-family: Barlow Condensed, sans-serif;
+  text-transform: none;
+}
+.filterItem {
+  position: relative;
+}
+section {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  background: white;
+  border: 1px solid #391113;
+  border-radius: 3px;
+
+}
+.checkboxCake:checked + .checkCake,
+.checkboxCheese:checked + .checkCheese,
+.checkboxTarts:checked + .checkTarts,
+.checkboxPastries:checked + .checkPastries,
+.checkboxWithChoco:checked + .checkWithChoco,
+.checkboxNoChoco:checked + .checkNoChoco,
+.checkboxWithSugar:checked + .checkWithSugar,
+.checkboxNoSugar:checked + .checkNoSugar,
+.checkboxWithNuts:checked + .checkWithNuts,
+.checkboxNoNuts:checked + .checkNoNuts,
+.checkboxS:checked + .checkS,
+.checkboxM:checked + .checkM,
+.checkboxL:checked + .checkL {
+  background: #391113;
+}
+
+.error{
+  color: #f09ec4;
+  text-align: start;
+}
+.btnSubmit {
+  width: 100%;
+  height: 40px;
+  color: #f09ec4;
+  font-weight: 200;
+  font-size: 23px;
+  font-family: Barlow Condensed, sans-serif;
+  background-color: #391113;
+  border-radius: 0;
+  margin-block: 10px;
+}
+.blockRadio{
+  padding: 7px;
+  background: #f7f7f7;
+ }
+.containerRadio{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 7px;
+}
+.filterBlock{
+  margin-bottom: 7px;
+}
+.block {
+  margin-block: 7px;
+  padding: 7px;
+  background: #f7f7f7;
+}
+.btnAdd {
+  width: 100%;
+  margin: 0 auto;
+  color: #391113;
+  font-weight: 300;
+  font-size: 25px;
+  font-family: Barlow Condensed, sans-serif;
+  text-align: center;
+  background: #d8cbc0;
+  border: 1px solid #d8cbc0;
+  padding-block: 10px;
+  cursor: pointer;
+  transition: all 2s cubic-bezier(.29,.63,.44,1);
+}
+@media (max-width: 900px) and (min-width: 400px)  {
+  .containerRadio {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+@media (max-width: 399px) {
+  .containerRadio {
+    grid-template-columns: 1fr;
+  }
+
+}
