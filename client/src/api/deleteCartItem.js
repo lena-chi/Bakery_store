@@ -3,7 +3,15 @@ export const deleteCartItem = async (objId) => {
     method: 'DELETE',
     headers: { Authorization: JSON.parse(localStorage.getItem('token')) },
   })
-    .then((res) => res.json());
+    .then((res) => res.json())
+    .then((data) => data.products)
+    .catch((err) => console.log(err));
 
-  return cart;
+  return cart.map.map(({
+    product: {
+      currentPrice, imageUrls: [image], itemNo, name, quantity, _id,
+    }, cartQuantity,
+  }) => ({
+    currentPrice, image, itemNo, name, quantity, _id, cartQuantity,
+  }));
 };

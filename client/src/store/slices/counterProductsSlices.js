@@ -7,7 +7,10 @@ const counterProductsSlices = createSlice({
   },
   reducers: {
     setCounterProducts: (state, action) => {
-      state.counterProducts = action.payload;
+      const arr = action.payload.map(({ cartQuantity }) => (cartQuantity));
+      console.log(arr);
+      state.counterProducts = arr.reduce((sum, el) => sum + el, 0);
+
     },
     incrementCounterProducts: (state) => {
       state.counterProducts += 1;

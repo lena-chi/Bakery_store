@@ -6,9 +6,13 @@ import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import { Grid, Typography, Box } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import styles from './CurrentProduct.module.scss';
-import { updateCartOnserver, setUpdatedCartItemsFromLocal } from '../../../store/slices/cartItemsSlices';
+// eslint-disable-next-line import/named
+import { setUpdatedCartItemsFromLocal, addCartItemsFromData } from '../../../store/slices/cartItemsSlices';
 import { addCartItemToLocalStorage } from '../../../commonHelpers/addCartItemToLocalStorage';
-import { mergeLocalCartArrAndArrInDb } from '../../../commonHelpers/mergeLocalCartArrAndArrInDb';
+import { sendCartItemToDatabase } from '../../../api/sendCartItemToDatabase';
+import { setCounterProducts } from '../../../store/slices/counterProductsSlices';
+
+// import { mergeLocalCartArrAndArrInDb } from '../../../commonHelpers/mergeLocalCartArrAndArrInDb';
 
 // ADDED ITEMS ARRAY FOR SENDING TO SERVER.
 // IDEA IS TO CHEK IF USER LOGGED AND THEN SEND ARRAY TO SERVER
@@ -27,14 +31,16 @@ function CurrentProduct() {
   const activeParameters = {
     borderBottom: '2px solid #fa9bc9',
   };
+  console.log(cartItems);
   // HERE IS CREATED an ARRAY of one product FOR SENDING TO SERVER
   const cartItemData = [{
-    product: currProduct, cartQuantity: 1, itemNo: id,
+    // product: currProduct, cartQuantity: 1, itemNo: id,
+    product: currProductId, cartQuantity: 1, itemNo: id,
   }];
-  // product: currProduct._id, cartQuantity: 1, itemNo: id,
+
   console.log(cartItemData);
-  // const cartItem = { itemNo: id, _id: currProductId, cartQuantity: 1 };
-  const index = cartItems.findIndex((el) => el.product._id === currProductId);
+
+  const index = cartItems.findIndex((el) => el._id === currProductId);
   let isItemInCart = false;
   if (index !== -1) {
     isItemInCart = true;
@@ -42,9 +48,12 @@ function CurrentProduct() {
 
   async function handleSubmit() {
     if (isUserLoggedIn) {
-      const mergedArray = await mergeLocalCartArrAndArrInDb(cartItemData);
-      console.log(mergedArray);
-      dispatch(updateCartOnserver(mergedArray));
+      const newCartArr = await sendCartItemToDatabase(currProductId);
+      console.log(newCartArr);
+      dispatch(addCartItemsFromData(newCartArr));
+      dispatch(setCounterProducts(newCartArr));
+      // const mergedArray = await mergeLocalCartArrAndArrInDb(cartItemData);
+      // dispatch(updateCartOnserver(mergedArray));
     } else {
       // dispatch(addCartItems(cartItem));
       addCartItemToLocalStorage(cartItemData);
@@ -56,6 +65,7 @@ function CurrentProduct() {
     fetch(`http://127.0.0.1:5005/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         setCurrProduct(data);
         setCurrProductId(data._id);
       })

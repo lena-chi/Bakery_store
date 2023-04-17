@@ -11,7 +11,7 @@ export const getLoggedUser = async () => {
   localStorage.setItem('user', JSON.stringify({ firstName, lastName, isAdmin }));
   return { firstName, lastName, isAdmin };
 };
-export const updateLoggerUser = () => {
+export const updateLoggerUser = async () => {
   const user = localStorage.getItem('user');
   console.log(user);
   if (user) {
