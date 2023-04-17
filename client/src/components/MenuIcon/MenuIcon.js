@@ -17,11 +17,12 @@ function MenuIcon() {
   const itemsInCart = useSelector(
     (state) => state.cartItems.cartItems,
   );
+  const itemsInCartCount = useSelector((state)=>state.counterProducts.counterProducts)
 
   // const isuserLoggedIn = useSelector((state) => state.userLogin.isUserLogged);
   // const itemsInCartInLocalStorage = useSelector((state) => state.basketArr.basketArr);
   // const { products } = itemsInCartInDatabase;
-  const itemsInCartCount = itemsInCart ? itemsInCart.length : 0;
+  // const itemsInCartCount = itemsInCart ? itemsInCart.length : 0;
   // const itemsCountInCartInLocalStorage = itemsInCartInLocalStorage.length;
 
   const [openInputSearch, setOpenInputSearch] = useState(false);

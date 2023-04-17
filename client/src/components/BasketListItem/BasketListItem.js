@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import ProductsCounter from '../ProductsCounter/ProductsCounter';
 import { deleteCartItem } from '../../api/deleteCartItem';
+import { addCartItemsFromData } from '../../store/slices/cartItemsSlices';
 
 function BasketListItem(props) {
   const dispatch = useDispatch();
@@ -13,18 +14,19 @@ function BasketListItem(props) {
   console.log(item);
   const [prodQuantityInCart, setprodQuantityInCart] = useState();
   const {
-    product: {
-      name, currentPrice, quantity: prodQuantity, imageUrls: [image], _id: objId,
-    }, cartQuantity,
+
+    name, currentPrice, quantity, image, _id, cartQuantity,
+
   } = item;
-  console.log(objId);
+  console.log(_id);
   function changeCartItemQuantity(counter) {
     setprodQuantityInCart(counter);
   }
   const totalPrice = currentPrice * prodQuantityInCart;
-  function handleClick() {
-    const res = deleteCartItem(objId);
+  async function handleClick() {
+    const res = await deleteCartItem(_id);
     console.log(res);
+    dispatch(addCartItemsFromData(res));
   }
 
   return (
@@ -112,7 +114,7 @@ function BasketListItem(props) {
         <Box>
           <ProductsCounter
             key={name}
-            prodQuantity={prodQuantity}
+            prodQuantity={quantity}
             cartQuantity={cartQuantity}
             changeCartItemQuantity={changeCartItemQuantity}
             sx={{ border: '3px solid #d8cbc0' }}
